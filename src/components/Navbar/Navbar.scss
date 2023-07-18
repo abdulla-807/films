@@ -1,0 +1,54 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: rgba(20, 20, 20, 0.5);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 25px 0;
+    margin-left: 30px;
+    display: block;
+    position: relative;
+    transition: 0.5s;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: #149A03;
+      border-radius: 50%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      transition: 0.5s;
+      transform: scale(0);
+    }
+    
+    &:hover, &.active  {
+      color: #fff;
+  
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+}
